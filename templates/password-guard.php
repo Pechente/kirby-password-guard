@@ -2,6 +2,7 @@
 <html>
 <head>
     <title><?= $page->title() ?></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         :root {
             --button-color: #D1E9A3;
