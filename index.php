@@ -23,17 +23,17 @@ Kirby::plugin('pechente/kirby-password-guard', [
             }
         ],
         [
-            'pattern' => option('rene-henrich.kirby-password-guard.pattern', '(:all)'),
+            'pattern' => option('pechente.kirby-password-guard.pattern', '(:all)'),
             'method' => 'GET',
             'action' => function (string $uid) {
-                if (option('rene-henrich.kirby-password-guard.enabled') === false || kirby()->user()) {
+                if (option('pechente.kirby-password-guard.enabled') === false || kirby()->user()) {
                     $this->next();
                 }
                 $passwordIncorrect = false;
                 // check session for password
                 $session = kirby()->session();
                 $hash = $session->get('kirby-password-guard.password-hash');
-                $password = option('rene-henrich.kirby-password-guard.password');
+                $password = option('pechente.kirby-password-guard.password');
 
                 // Display the page if the password is correct
                 if ($hash) {
