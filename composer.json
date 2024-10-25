@@ -3,8 +3,8 @@
     "description": "Kirby Password Guard",
     "license": "MIT",
     "type": "kirby-plugin",
-    "homepage": "",
-    "version": "0.0.1",
+    "homepage": "https://github.com/Pechente/kirby-password-guard/",
+    "version": "1.0.0",
     "authors": [
         {
             "name": "René Henrich",
