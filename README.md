@@ -35,7 +35,7 @@ Add the following lines to your config.php:
 
 ```php
 return [
-    'rene-henrich.kirby-password-guard' => [
+    'pechente.kirby-password-guard' => [
         'enabled' => true, // Optional - default is true
         'password' => 'password', // Required - The password used to access the site
         'pattern' => '(:all)', // Optional - The pattern to protect. By default, all pages are protected. Check the Kirby documentation for more information.
