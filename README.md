@@ -5,6 +5,8 @@ to
 set a password that needs to be entered in order to access the site. This can be useful for staging sites to prevent
 unwanted access.
 
+![kirby-password-guard](https://github.com/user-attachments/assets/2e4596a7-56a9-4084-8b5c-4c3358e4f34c)
+
 ****
 
 ## Installation
