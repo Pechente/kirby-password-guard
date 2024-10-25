@@ -3,7 +3,7 @@
 **Kirby Password Guard** is a simple password protection for your [Kirby](https://getkirby.com/) website. It allows you
 to
 set a password that needs to be entered in order to access the site. This can be useful for staging sites to prevent
-unwanted access.
+unwanted access. Logged in users can access the site normally but any guest will run into the password entry page.
 
 ![kirby-password-guard](https://github.com/user-attachments/assets/2e4596a7-56a9-4084-8b5c-4c3358e4f34c)
 
