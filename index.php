@@ -26,7 +26,7 @@ Kirby::plugin('pechente/kirby-password-guard', [
             'pattern' => option('rene-henrich.kirby-password-guard.pattern', '(:all)'),
             'method' => 'GET',
             'action' => function (string $uid) {
-                if (option('rene-henrich.kirby-password-guard.enabled') === false) {
+                if (option('rene-henrich.kirby-password-guard.enabled') === false || kirby()->user()) {
                     $this->next();
                 }
                 $passwordIncorrect = false;
