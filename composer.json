@@ -1,0 +1,35 @@
+{
+    "name": "pechente/kirby-password-guard",
+    "description": "Kirby Password Guard",
+    "license": "MIT",
+    "type": "kirby-plugin",
+    "homepage": "",
+    "version": "0.0.1",
+    "authors": [
+        {
+            "name": "René Henrich",
+            "email": "contact@rene-henric.de"
+        }
+    ],
+    "require": {
+        "php": ">=8.0.0",
+        "getkirby/cms": ">=4.0.0",
+        "getkirby/composer-installer": "^1.2"
+    },
+    "keywords": [
+        "kirby5",
+        "kirby5-cms",
+        "kirby5-plugin",
+        "password",
+        "guard",
+        "protect",
+        "development",
+        "panel"
+    ],
+    "config": {
+        "optimize-autoloader": true,
+        "allow-plugins": {
+            "getkirby/composer-installer": true
+        }
+    }
+}
