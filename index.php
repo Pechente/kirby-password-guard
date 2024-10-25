@@ -2,7 +2,7 @@
 
 use Kirby\Cms\Page;
 
-Kirby::plugin('rene-henrich/kirby-password-guard', [
+Kirby::plugin('pechente/kirby-password-guard', [
     'templates' => [
         'password-guard' => __DIR__ . '/templates/password-guard.php',
     ],
