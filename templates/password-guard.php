@@ -96,7 +96,7 @@
     <?php endif ?>
     <div class="fields">
         <label for="password"><?= kirby()->translation()->get('password') ?></label>
-        <input type="password" name="password" id="password" required>
+        <input type="password" name="password" id="password" autofocus required>
         <input type="hidden" name="redirect" value="<?= $page->redirect() ?>">
         <button type="submit">
             <?= kirby()->translation()->get('lock.unlock') ?>
