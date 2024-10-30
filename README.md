@@ -37,7 +37,7 @@ Add the following lines to your config.php:
 return [
     'pechente.kirby-password-guard' => [
         'enabled' => true, // Optional - default is true
-        'password' => 'password', // Required - The password used to access the site
+        'password' => 'password', // Required - The password used to access the site. If left empty the plugin will not be enabled.
         'pattern' => '(:all)', // Optional - The pattern to protect. By default, all pages are protected. Check the Kirby documentation for more information.
     ]
 ];
@@ -46,7 +46,7 @@ return [
 ### Template
 
 You can overwrite the template for the password form by creating the file `site/templates/password-guard.php`. Here's a
-minimal example of this file needs to include:
+minimal example of what this file needs to include:
 
 ```php
 <!DOCTYPE html>
@@ -70,3 +70,21 @@ minimal example of this file needs to include:
 
 Please keep in mind that you should avoid adding code from your website like the stylesheets or header / footer since it
 might defeat the purpose of the password protection.
+
+## FAQ & Troubleshooting
+
+### I'm not seeing the password prompt when I visit my site
+
+Make sure you're not signed in. If you're signed in, you won't see the password prompt. I'd recommend testing the plugin
+in a private browsing window.
+
+If that didn't work, make sure that the configuration is correct.
+
+### How secure is the password protection?
+
+The password is verified on the backend and cannot easily be circumvented. The password is only ever stored as a hash on
+the user's side.
+
+---
+
+If you have any issues with the plugin, please open an issue here on GitHub.
