@@ -9,6 +9,7 @@ Kirby::plugin('pechente/kirby-password-guard', [
     'routes' => [
         [
             'pattern' => 'password-guard',
+            'language' => '*',
             'method' => 'POST',
             'action' => function () {
                 $password = get('password');
