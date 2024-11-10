@@ -16,7 +16,7 @@
         <p><?= t('error.user.password.wrong') ?></p>
         <button type="button" class="k-button k-login-alert-close">
           <span class="k-button-icon">
-            <?= panelIcon('cancel') ?>
+            <?= snippet('panel-icon', ['name' => 'cancel']) ?>
           </span>
         </button>
       </div>
@@ -35,14 +35,14 @@
                 <input type="hidden" name="redirect" value="<?= $page->redirect() ?>">
               </span>
               <span class="k-input-icon">
-                <?= panelIcon('key') ?>
+                <?= snippet('panel-icon', ['name' => 'key']) ?>
               </span>
             </div>
           </div>
           <div class="k-login-buttons">
             <button data-has-text="true" data-size="lg" data-theme="positive" data-variant="filled" type="submit" class="k-button k-login-button" style="width: 100%">
               <span class="k-button-icon">
-                <?= panelIcon('unlock') ?>
+               <?= snippet('panel-icon', ['name' => 'unlock']) ?>
               </span>
               <span class="k-button-text"><?= t('lock.unlock') ?></span>
             </button>

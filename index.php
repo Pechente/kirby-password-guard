@@ -2,28 +2,12 @@
 
 use Kirby\Cms\Page;
 
-function panelIcon($name): string|false
-{
-    $panelIcons = svg('kirby/panel/dist/img/icons.svg');
-
-    if ($panelIcons) {
-        if (preg_match('/<symbol[^>]*id="icon-' . $name . '"[^>]*viewBox="(.*?)"[^>]*>(.*?)<\/symbol>/s', $panelIcons, $matches)) {
-
-            if (preg_match('/<use href="#icon-(.*?)"[^>]*?>/s', $matches[2], $use)) {
-                return icon($use[1]);
-            }
-
-
-            return '<svg class="k-icon" data-type="' . $name . '" xmlns="http://www.w3.org/2000/svg" viewBox="' . $matches[1] . '">' . $matches[2] . '</svg>';
-        }
-    }
-
-    return false;
-}
-
 Kirby::plugin('pechente/kirby-password-guard', [
     'templates' => [
         'password-guard' => __DIR__ . '/templates/password-guard.php',
+    ],
+    'snippets' => [
+        'panel-icon' => __DIR__ . '/snippets/panel-icon.php',
     ],
     'routes' => [
         [
