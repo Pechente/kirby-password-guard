@@ -6,7 +6,7 @@
 
   <title><?= $page->title() ?></title>
 
-  <link rel="stylesheet" href="<?= $kirby->url('media') . '/panel/' . $kirby->versionHash() . '/css/style.min.css' ?>">
+  <style><?php F::load($kirby->root('kirby') . '/panel/dist/css/style.min.css'); ?></style>
 </head>
 <body>
   <div class="k-panel k-panel-outside">
