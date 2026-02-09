@@ -30,6 +30,8 @@ Kirby::plugin('pechente/kirby-password-guard', [
             'pattern' => option('pechente.kirby-password-guard.pattern', '(:all)'),
             'method' => 'GET',
             'action' => function (string $uid) {
+                $query = get();
+                $redirectUrl = $uid . (empty($query) ? '' : '?' . http_build_query($query));
                 if (
                     option('pechente.kirby-password-guard.enabled') === false ||
                     !option('pechente.kirby-password-guard.password') ||
@@ -59,7 +61,7 @@ Kirby::plugin('pechente/kirby-password-guard', [
                     'template' => 'password-guard',
                     'content' => [
                         'title' => 'Password Guard',
-                        'redirect' => url($uid),
+                        'redirect' => url($redirectUrl),
                         'passwordIncorrect' => $passwordIncorrect
                     ]
                 ]);
