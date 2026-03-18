@@ -31,7 +31,7 @@
             </header>
             <div class="k-input">
               <span class="k-input-element">
-                <input type="password" name="password" id="password" class="k-text-input" autofocus required>
+                <input type="password" name="password" id="password" class="k-password-input k-string-input" autofocus required>
                 <input type="hidden" name="redirect" value="<?= $page->redirect() ?>">
               </span>
               <span class="k-input-icon">
