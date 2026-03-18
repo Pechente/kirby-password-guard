@@ -26,6 +26,7 @@
           <div class="k-login-fields">
             <header class="k-field-header">
               <label class="k-label" title="<?= t('password') ?>">
+              <label for="password" class="k-label" title="<?= t('password') ?>">
                 <span class="k-label-text"><?= t('password') ?></span>
               </label>
             </header>
