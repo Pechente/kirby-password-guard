@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="<?= $kirby->language()?->code() ?>">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -9,7 +9,7 @@
   <style><?php F::load($kirby->root('kirby') . '/panel/dist/css/style.min.css'); ?></style>
 </head>
 <body>
-  <div class="k-panel k-panel-outside">
+  <main class="k-panel k-panel-outside">
     <div class="k-dialog k-login k-login-dialog">
       <?php if($page->passwordIncorrect()->toBool()): ?>
       <div data-theme="error" class="k-notification k-login-alert">
@@ -24,14 +24,14 @@
       <div class="k-dialog-body">
         <form class="k-login-form" method="post" action="<?= $page->url() ?>">
           <div class="k-login-fields">
-            <header class="k-field-header">
-              <label class="k-label" title="<?= t('password') ?>">
+            <div class="k-field-header">
+              <label for="password" class="k-label" title="<?= t('password') ?>">
                 <span class="k-label-text"><?= t('password') ?></span>
               </label>
-            </header>
+            </div>
             <div class="k-input">
               <span class="k-input-element">
-                <input type="password" name="password" id="password" class="k-text-input" autofocus required>
+                <input type="password" name="password" id="password" class="k-password-input k-string-input" autofocus required>
                 <input type="hidden" name="redirect" value="<?= $page->redirect() ?>">
               </span>
               <span class="k-input-icon">
@@ -50,7 +50,7 @@
         </form>
       </div>
     </div>
-  </div>
+  </main>
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
