@@ -23,7 +23,7 @@ Kirby::plugin('pechente/kirby-password-guard', [
 
                 $redirect = get('redirect');
 
-                kirby()->response()->redirect($redirect);
+                return kirby()->response()->redirect($redirect);
             }
         ],
         [
