@@ -39,6 +39,7 @@ return [
         'enabled' => true, // Optional - default is true
         'password' => 'password', // Required - The password used to access the site. If left empty the plugin will not be enabled.
         'pattern' => '(:all)', // Optional - The pattern to protect. By default, all pages are protected. Check the Kirby documentation for more information.
+        'nonce' => true, // Optional - default is true. Adds Kirby's per-request nonce ($kirby->nonce()) to the password prompt's inline <style> and <script> tags, so they keep working under a strict CSP (style-src/script-src without 'unsafe-inline') as long as you add 'nonce-' . $kirby->nonce() to that CSP header yourself. Disable if you don't want the nonce attribute added.
     ]
 ];
 ```

@@ -1,3 +1,4 @@
+<?php $nonce = option('pechente.kirby-password-guard.nonce', true) ? $kirby->nonce() : null; ?>
 <!DOCTYPE html>
 <html lang="<?= $kirby->language()?->code() ?>">
 <head>
@@ -6,7 +7,10 @@
 
   <title><?= $page->title() ?></title>
 
-  <style><?php F::load($kirby->root('kirby') . '/panel/dist/css/style.min.css'); ?></style>
+  <style<?= $nonce ? ' nonce="' . $nonce . '"' : '' ?>>
+    <?php F::load($kirby->root('kirby') . '/panel/dist/css/style.min.css'); ?>
+    .k-login-button-full { width: 100%; }
+  </style>
 </head>
 <body>
   <main class="k-panel k-panel-outside">
@@ -40,7 +44,7 @@
             </div>
           </div>
           <div class="k-login-buttons">
-            <button data-has-text="true" data-size="lg" data-theme="positive" data-variant="filled" type="submit" class="k-button k-login-button" style="width: 100%">
+            <button data-has-text="true" data-size="lg" data-theme="positive" data-variant="filled" type="submit" class="k-button k-login-button k-login-button-full">
               <span class="k-button-icon">
                <?= snippet('panel-icon', ['name' => 'unlock']) ?>
               </span>
@@ -52,7 +56,7 @@
     </div>
   </main>
 
-  <script>
+  <script<?= $nonce ? ' nonce="' . $nonce . '"' : '' ?>>
     document.addEventListener('DOMContentLoaded', function () {
       // Cancel button to remove error alert
       const icon = document.querySelector('.k-login-alert-close');
