@@ -10,6 +10,21 @@
   <style<?= $nonce ? ' nonce="' . $nonce . '"' : '' ?>>
     <?php F::load($kirby->root('kirby') . '/panel/dist/css/style.min.css'); ?>
     .k-login-button-full { width: 100%; }
+    .k-login {
+      --dialog-color-back: light-dark(var(--color-white), var(--color-gray-950));
+      --dialog-shadow: none;
+    }
+    .k-login-form {
+      display: block;
+      padding: 0;
+      background: none;
+      border-radius: 0;
+    }
+    .k-login-buttons {
+      --button-padding: var(--spacing-3);
+      display: flex;
+      margin-top: var(--spacing-6);
+    }
   </style>
 </head>
 <body>
@@ -62,12 +77,15 @@
       const icon = document.querySelector('.k-login-alert-close');
       const alert = document.querySelector('.k-login-alert');
       icon?.addEventListener('click', () => alert?.remove());
-
-      // Password label to focus on input
-      const label = document.querySelector('.k-label');
-      const input = document.querySelector('.k-text-input');
-      label?.addEventListener('click', () => input?.focus());
     });
+
+    // Password label to focus on input
+    (function () {
+      const input = document.getElementById('password');
+      const focusInput = () => input?.focus({ preventScroll: true });
+      focusInput();
+      window.addEventListener('pageshow', focusInput);
+    })();
   </script>
 </body>
 </html>
